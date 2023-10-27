@@ -8,16 +8,12 @@
     ~/.profile:
         path: .profile
         relink: true
-        force: true
         
     ~/.zshenv:
-        path: .profile
+        path: .zshenv
         relink: true
-        force: true
     
     ~/.scripts: scripts/
-    ~/.themes: themes/
-    ~/.wallpapers: wallpapers/
     
     ~/.config:
         glob: true
@@ -28,3 +24,5 @@
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
     - [mkdir -p ~/.config, Creating config folder]
+    - [cp -r wallpapers ~/.wallpapers, Copying wallpapers]
+    - [cp -r themes ~/.themes, Copying themes]
