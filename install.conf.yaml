@@ -1,0 +1,30 @@
+- defaults:
+    link:
+      relink: true
+
+- clean: ["~", "~/.config", "~/.themes", "~/.scripts", "~/.wallpapers"]
+
+- link:
+    ~/.profile:
+        path: .profile
+        relink: true
+        force: true
+        
+    ~/.zshenv:
+        path: .profile
+        relink: true
+        force: true
+    
+    ~/.scripts: scripts/
+    ~/.themes: themes/
+    ~/.wallpapers: wallpapers/
+    
+    ~/.config:
+        glob: true
+        path: config/*
+        relink: true
+        force: true
+    
+- shell:
+    - [git submodule update --init --recursive, Installing submodules]
+    - [mkdir -p ~/.config, Creating config folder]

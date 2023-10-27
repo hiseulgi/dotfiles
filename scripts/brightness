@@ -1,0 +1,21 @@
+#!/bin/sh
+down() {
+brightnessctl set 10%-
+brightness=$(brightnessctl | grep -o "(.*" | tr -d "(%)")
+[ $brightness -gt 0 ] && brightness=`expr $brightness`  
+dunstify -a "BRIGHTNESS" "Decreasing to $brightness%" -h int:value:"$brightness" -i weather-clear-night -r 2593 -u normal
+canberra-gtk-play -i dialog-error -d "error"
+}
+
+up() {
+brightnessctl set 10%+
+brightness=$(brightnessctl | grep -o "(.*" | tr -d "(%)")
+[ $brightness -lt 100 ] && brightness=`expr $brightness`  
+dunstify -a "BRIGHTNESS" "Increasing to $brightness%" -h int:value:"$brightness" -i weather-clear -r 2593 -u normal
+canberra-gtk-play -i dialog-error -d "error"
+}
+
+case "$1" in
+  up) up;;
+  down) down;;
+esac
