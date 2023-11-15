@@ -1,9 +1,10 @@
 # dotfiles
 
-My personal dotfiles based on [linuxmobile](https://github.com/linuxmobile/hyprland-dots).
-* Os: Arch Linux
+My Archcraft themes
+* Os: Archcraft
+* Wm: Openbox
+* Bar: Polybar
 
 ## Reference
 
-* [linuxmobile](https://github.com/linuxmobile/hyprland-dots)
-* [dotbot](https://github.com/anishathalye/dotbot)
+* [archcraft](https://github.com/archcraft-os)
